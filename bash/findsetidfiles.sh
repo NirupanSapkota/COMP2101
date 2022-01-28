@@ -22,7 +22,8 @@ echo ""
 
 
 echo "Sorted files according to size are:"
-find / -type f -printf '%s %p\n'| sort -nr | head -n 12
+find / -type f -executable -ls -printf 'found file: %p owned by %u of size : %kK\n' 2>/dev/null |sort -nr | head -n 12
+
 
 
 # for the task, add
